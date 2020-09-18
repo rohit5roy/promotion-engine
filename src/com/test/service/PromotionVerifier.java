@@ -11,7 +11,7 @@ import static java.util.stream.Collectors.groupingBy;
 
 public class PromotionVerifier {
     //returns PromotionID and count of promotions
-    public static int GetTotalPrice(Order ord, Promotion prom)
+    public static int getTotalPrice(Order ord, Promotion prom)
     {
         int d = 0;
         //get count of promoted products in order
@@ -24,11 +24,6 @@ public class PromotionVerifier {
                 .map(Map.Entry::getValue)
                 .mapToInt(List::size)
                 .sum();
-//                .GroupBy(x=> x.Id)
-//            .Where(grp=> prom.ProductInfo.Any(y=>grp.Key==y.Key && grp.Count()>=y.Value))
-//            .Select(grp=> grp.Count())
-//            .Sum();
-        //get count of promoted products from promotion
         int ppc = prom.getProductInfoMap().values().stream().mapToInt(i -> i).sum();
         while(copp>= ppc)
         {
