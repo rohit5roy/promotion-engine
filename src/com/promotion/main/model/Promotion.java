@@ -1,17 +1,17 @@
-package com.promotion.model;
+package com.promotion.main.model;
 
 import java.util.HashMap;
 
 public class Promotion {
     private int promotionId;
     private HashMap<String, Integer> productInfoMap;
-    private int promoPrice;
+    private int promoDiscount;
 
-    public Promotion(int promId, HashMap<String, Integer> prodInfoMap, int pprice)
+    public Promotion(int promId, HashMap<String, Integer> prodInfoMap, int promoDiscountAmount)
     {
         this.promotionId = promId;
         this.productInfoMap = prodInfoMap;
-        this.promoPrice = pprice;
+        this.promoDiscount = promoDiscountAmount;
     }
 
     public int getPromotionId() {
@@ -30,11 +30,11 @@ public class Promotion {
         this.productInfoMap = productInfoMap;
     }
 
-    public int getPromoPrice() {
-        return promoPrice;
+    public int getPromoDiscount() {
+        return promoDiscount;
     }
 
-    public void setPromoPrice(int promoPrice) {
-        this.promoPrice = promoPrice;
+    public void setPromoDiscount(int promoDiscount) {
+        this.promoDiscount = promoDiscount;
     }
 }

@@ -1,9 +1,9 @@
-package com.promotion;
+package com.promotion.main;
 
-import com.promotion.model.Order;
-import com.promotion.model.Product;
-import com.promotion.model.Promotion;
-import com.promotion.service.PromotionVerifier;
+import com.promotion.main.model.Product;
+import com.promotion.main.model.Order;
+import com.promotion.main.model.Promotion;
+import com.promotion.main.service.PromotionVerifier;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,8 +26,8 @@ public class Main {
         d3.put("D", 1);
 
         List<Promotion> promotions = Arrays.asList(
-                new Promotion(1, d1, 130),
-                new Promotion(2, d2, 45),
+                new Promotion(1, d1, 150 - 130),
+                new Promotion(2, d2, 60 - 45),
                 new Promotion(3, d3, 30));
 
         //create orders

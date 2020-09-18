@@ -1,8 +1,8 @@
-package com.promotion.service;
+package com.promotion.main.service;
 
-import com.promotion.model.Order;
-import com.promotion.model.Product;
-import com.promotion.model.Promotion;
+import com.promotion.main.model.Product;
+import com.promotion.main.model.Order;
+import com.promotion.main.model.Promotion;
 
 import java.util.List;
 import java.util.Map;
@@ -15,20 +15,20 @@ public class PromotionVerifier {
     {
         int d = 0;
         //get count of promoted products in order
-        int copp = ord.getProducts().stream()
-                .collect(groupingBy(Product :: getId))
+        int cOpp = ord.getProducts().stream()
+                .collect(groupingBy(Product:: getId))
                 .entrySet().stream()
                 .filter(grp -> prom.getProductInfoMap()
                         .entrySet().stream()
-                        .anyMatch(y -> grp.getKey().equals(y.getKey()) && grp.getValue().size() == y.getValue()))
+                        .anyMatch(promotionProduct -> grp.getKey().equals(promotionProduct.getKey()) && grp.getValue().size() >= promotionProduct.getValue()))
                 .map(Map.Entry::getValue)
                 .mapToInt(List::size)
                 .sum();
         int ppc = prom.getProductInfoMap().values().stream().mapToInt(i -> i).sum();
-        while(copp>= ppc)
+        while(cOpp>= ppc)
         {
-            d +=  prom.getPromoPrice();
-            copp -= ppc;
+            d +=  prom.getPromoDiscount();
+            cOpp -= ppc;
         }
         return d;
     }
