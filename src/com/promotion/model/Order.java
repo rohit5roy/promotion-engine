@@ -1,4 +1,4 @@
-package com.test.model;
+package com.promotion.model;
 
 import java.util.List;
 

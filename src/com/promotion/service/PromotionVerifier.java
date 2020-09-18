@@ -1,8 +1,8 @@
-package com.test.service;
+package com.promotion.service;
 
-import com.test.model.Order;
-import com.test.model.Product;
-import com.test.model.Promotion;
+import com.promotion.model.Order;
+import com.promotion.model.Product;
+import com.promotion.model.Promotion;
 
 import java.util.List;
 import java.util.Map;

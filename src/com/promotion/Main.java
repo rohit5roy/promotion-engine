@@ -1,9 +1,9 @@
-package com.test;
+package com.promotion;
 
-import com.test.model.Order;
-import com.test.model.Product;
-import com.test.model.Promotion;
-import com.test.service.PromotionVerifier;
+import com.promotion.model.Order;
+import com.promotion.model.Product;
+import com.promotion.model.Promotion;
+import com.promotion.service.PromotionVerifier;
 
 import java.util.ArrayList;
 import java.util.Arrays;

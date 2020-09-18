@@ -1,4 +1,4 @@
-package com.test.model;
+package com.promotion.model;
 
 public class Product {
     private String id;
